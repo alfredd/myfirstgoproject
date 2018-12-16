@@ -1,2 +1,19 @@
 
+syntax = "proto3";
+
+
+service ChatPoint {
+    rpc Register (RegisterMessage) returns (int64);
+    rpc Send (ChatMessage) returns (bool);
+}
+
+message RegisterMessage {
+    string user = 1;
+}
+
+message ChatMessage {
+    string sender    = 1;
+    string message   = 2;
+    string receiver  = 3;
+}
 
